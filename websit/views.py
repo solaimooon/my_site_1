@@ -3,12 +3,12 @@ from django.http import HttpResponse
 
 
 def home_veiw(request):
-    return HttpResponse('<h1>home page</h1>')
+    return render(request,'Home.html')
 
 
 def about_veiw(request):
-    return HttpResponse('<h1>about page</h1>')
+    return render(request,'about.html')
 
 
 def contact_veiw(request):
-    return HttpResponse('<h1>contact page</h1>')
+    return render(request, 'contact.html')
