@@ -3,7 +3,7 @@ from django.http import HttpResponse
 
 
 def home_veiw(request):
-    return render(request,'Home.html')
+    return render(request,'index.html')
 
 
 def about_veiw(request):
