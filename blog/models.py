@@ -9,6 +9,10 @@ class post (models.Model):
     created_date = models.DateTimeField(auto_now_add=True, null=True)
     updated_date = models.DateTimeField(auto_now=True, null=True)
     published_date = models.DateTimeField(null=True)
+
     def __str__(self):
-        return "{}_{}".format(self.id,self.title)
+        return "{}_{}".format(self.id, self.title)
+
+    class Meta:
+        db_table = 'پست'
 # Create your models here.
