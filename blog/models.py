@@ -7,6 +7,7 @@ class post (models.Model):
     content = models.TextField()
     counted_view = models.IntegerField(default=0)
     athour = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    picture = models.ImageField(upload_to='image/',default='image/defualt.jpg')
     status = models.BooleanField(null=True)
     created_date = models.DateTimeField(auto_now_add=True, null=True)
     updated_date = models.DateTimeField(auto_now=True, null=True)
