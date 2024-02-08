@@ -11,8 +11,7 @@ def blog_veiw(request):
 
 
 def blog_detail_veiw(request, id):
-    post_detail=post.objects.filter(status=True)
-    post_detail = get_object_or_404(post_detail, pk=id)
+    post_detail=post.objects.filter(pk=id, status=True)
     post_detail_notlist=post_detail[0]
     context={"post_detail_notlist_key":post_detail_notlist}
     return render(request, 'blog/blog-single.html',context)

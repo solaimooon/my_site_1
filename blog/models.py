@@ -1,10 +1,12 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class post (models.Model):
     title = models.CharField(max_length=255)
     content = models.TextField()
     counted_view = models.IntegerField(default=0)
+    athour = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     status = models.BooleanField(null=True)
     created_date = models.DateTimeField(auto_now_add=True, null=True)
     updated_date = models.DateTimeField(auto_now=True, null=True)
