@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django_jalali.db import models as jmodels
 
 
 class category(models.Model):
@@ -17,9 +18,9 @@ class post (models.Model):
     category = models.ManyToManyField(category,null=True)
     picture = models.ImageField(upload_to='image/',default='image/defualt.jpg')
     status = models.BooleanField(null=True)
-    created_date = models.DateTimeField(auto_now_add=True, null=True)
-    updated_date = models.DateTimeField(auto_now=True, null=True)
-    published_date = models.DateTimeField(null=True)
+    created_date = jmodels.jDateTimeField(auto_now_add=True, null=True)
+    updated_date = jmodels.jDateTimeField(auto_now=True, null=True)
+    published_date = jmodels.jDateTimeField(null=True)
 
     def __str__(self):
         return "{}_{}".format(self.id, self.title)
