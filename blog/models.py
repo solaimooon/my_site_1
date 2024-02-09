@@ -2,11 +2,19 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
+class category(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+
 class post (models.Model):
     title = models.CharField(max_length=255)
     content = models.TextField()
     counted_view = models.IntegerField(default=0)
     athour = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    category = models.ManyToManyField(category,null=True)
     picture = models.ImageField(upload_to='image/',default='image/defualt.jpg')
     status = models.BooleanField(null=True)
     created_date = models.DateTimeField(auto_now_add=True, null=True)
