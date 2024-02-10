@@ -19,4 +19,8 @@ def blog_detail_veiw(request, id):
     post_detail_notlist.save()
     context={"post_detail_notlist_key":post_detail_notlist}
     return render(request, 'blog/blog-single.html',context)
+
+
+def test_view(request):
+    return render(request,'test.html')
 # Create your views here.
