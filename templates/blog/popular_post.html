@@ -1,4 +1,5 @@
 {% load static %}
+{% load template_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,6 +48,10 @@
 										</div>
 									</div>
 								</div>
+{% for post in posts %}
+    {{ post.title }}
+{% endfor %}
+
 
 </body>
 </html>

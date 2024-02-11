@@ -6,6 +6,8 @@
     <title>Title</title>
 </head>
 <body>
-{% hello %}
+{% simpel_template_tag as p %}
+{{ p | contatnt_fileter:5}}
+{% include_test %}
 </body>
 </html>
