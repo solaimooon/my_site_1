@@ -14,8 +14,8 @@ def contatnt_fileter(content,number):
 
 
 @register.inclusion_tag('blog/popular_post.html')
-def include_test():
-    posts=post.objects.all().order_by('published_date').values()
+def popular_post():
+    posts=post.objects.all().order_by('published_date')[0:1]
     return {'posts':posts}
 
 

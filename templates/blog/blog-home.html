@@ -1,5 +1,6 @@
     {% extends 'base.html' %}
     {% load static %}
+    {% load template_tags %}
     {% block content %}
 			<!-- start banner Area -->
 			<section class="banner-area relative blog-home-banner" id="home">	
@@ -149,7 +150,7 @@
 			                        </form>
 								</div>
 								{% include 'blog/writer_section.html' %}
-                                {% include 'blog/popular_post.html' %}
+                                {% popular_post %}
 								<div class="single-sidebar-widget ads-widget">
 									<a href="#"><img class="img-fluid" src={% static 'img/blog/ads-banner.jpg' %} alt=""></a>
 								</div>
