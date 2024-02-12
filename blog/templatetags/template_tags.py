@@ -19,3 +19,19 @@ def popular_post():
     return {'posts':posts}
 
 
+@register.inclusion_tag('blog/category.html')
+def category_post():
+    all_cetegory=category.objects.all()
+    #print(all_cetegory)
+    dict_rasposnse = {}
+    for cat in all_cetegory:
+        posts=post.objects.all()
+        posts_filtering=posts.filter(category=cat).count()
+        print(posts_filtering)
+        dict_rasposnse.update({cat:posts_filtering})
+        print(dict_rasposnse)
+
+    return {'result':dict_rasposnse}
+
+
+

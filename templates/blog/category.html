@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="single-sidebar-widget post-category-widget">
+									<h4 class="category-title">Post Catgories</h4>
+									<ul class="cat-list">
+                                        {% for re, value in result.items %}
+										<li>
+											<a href="#" class="d-flex justify-content-between">
+												<p>{{ re }}</p>
+												<p>{{ value }}</p>
+											</a>
+										</li>
+                                        {% endfor %}
+									</ul>
+								</div>
+</body>
+</html>
