@@ -33,7 +33,7 @@
 								<div class="col-lg-3  col-md-3 meta-details">
 									<ul class="tags">
                                         {% for cat in  post_detail_notlist_key.category.all %}
-                                            <li><a href="#">{{ cat.name }},</a></li>
+                                            <li><a href="{% url 'blog:category' str=cat %}">{{ cat.name }},</a></li>
                                         {% endfor %}
 									</ul>
 									<div class="user-details row">

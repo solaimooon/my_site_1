@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +11,7 @@
 									<ul class="cat-list">
                                         {% for re, value in result.items %}
 										<li>
-											<a href="#" class="d-flex justify-content-between">
+											<a href="{% url 'blog:category' str=re %}" class="d-flex justify-content-between">
 												<p>{{ re }}</p>
 												<p>{{ value }}</p>
 											</a>

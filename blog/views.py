@@ -21,6 +21,12 @@ def blog_detail_veiw(request, id):
     return render(request, 'blog/blog-single.html',context)
 
 
+def category_view(request,str):
+    posts=post.objects.filter(category__name=str)
+    contxt={'posts_key':posts}
+    return render(request,'blog/blog-home.html',contxt)
+
+
 def test_view(request):
     return render(request,'test.html')
 # Create your views here.

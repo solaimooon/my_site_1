@@ -27,10 +27,7 @@ def category_post():
     for cat in all_cetegory:
         posts=post.objects.all()
         posts_filtering=posts.filter(category=cat).count()
-        print(posts_filtering)
         dict_rasposnse.update({cat:posts_filtering})
-        print(dict_rasposnse)
-
     return {'result':dict_rasposnse}
 
 
